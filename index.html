@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="耳から情報を取得する新しい体験">
+    <title>EarInfo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <div class="container">
+        <div class="logo-section">
+            <div class="logo-icon">
+                <svg viewBox="0 0 120 120" class="ear-icon">
+                    <path d="M60 20C35 20 20 40 20 65C20 85 30 100 50 100C52 100 54 98 54 96C54 94 52 92 50 92C35 92 28 80 28 65C28 45 40 28 60 28C80 28 92 45 92 65C92 75 88 82 82 85L80 70C80 60 72 52 62 52C55 52 50 57 50 64C50 71 55 76 62 76C66 76 69 74 70 71L72 83C72 88 68 92 63 92C61 92 59 94 59 96C59 98 61 100 63 100C73 100 80 93 80 83L82 93C90 89 100 78 100 65C100 40 85 20 60 20Z" fill="currentColor"/>
+                    <circle cx="60" cy="65" r="8" fill="currentColor"/>
+                </svg>
+            </div>
+            <h1 class="app-title">EarInfo</h1>
+            <p class="app-subtitle">聴いて、知る</p>
+        </div>
+
+        <div class="search-section">
+            <input 
+                type="text" 
+                id="keyword-input" 
+                class="search-input" 
+                placeholder="キーワードを入力..."
+                aria-label="検索キーワード"
+            >
+            <button 
+                id="fetch-button" 
+                class="search-button"
+                aria-label="情報を取得"
+            >
+                取得する
+            </button>
+        </div>
+
+        <div class="controls-section hidden" id="audio-controls">
+            <button 
+                id="play-button" 
+                class="control-icon"
+                aria-label="再生"
+                title="再生"
+            >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+            </button>
+            <button 
+                id="pause-button" 
+                class="control-icon hidden"
+                aria-label="一時停止"
+                title="一時停止"
+            >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                </svg>
+            </button>
+            <button 
+                id="stop-button" 
+                class="control-icon"
+                aria-label="停止"
+                title="停止"
+            >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 6h12v12H6z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="speed-section hidden" id="speed-control">
+            <label class="speed-label">再生速度</label>
+            <div class="speed-slider-container">
+                <input 
+                    type="range" 
+                    id="speed-slider" 
+                    class="speed-slider"
+                    min="0.5" 
+                    max="2" 
+                    step="0.1" 
+                    value="1"
+                    aria-label="再生速度"
+                >
+                <span id="speed-value" class="speed-value">1.0x</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="status-toast hidden" id="status-message">
+        <p id="status-text"></p>
+    </div>
+
+    <footer class="footer">
+        <a href="about.html" class="footer-link">About</a>
+    </footer>
+
+    <script src="const.js"></script>
+    <script src="ui.js"></script>
+    <script src="logic.js"></script>
+</body>
+</html>
